@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}About
+{% endblock %}
+{% block content %}
+	Histoire d'halloween
+{% endblock content %}
+{% block
+stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+	{{ encore_entry_link_tags("about") }}
+
+{% endblock %}
+{% block body %}
+	<div class="banniere" style="margin-top:-20px">
+		<img src="{{ asset('images/about.jpg') }}" class="img-fluid" alt="user"/>
+	</div>
+	<div class="container">
+		<h1 class="text-center">Histoire d'halloween</h1>
+		<div class="row">
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+				<p>
+					<b>Halloween</b>, ou l'Halloween en français canadien, est une fête folklorique originaire des îles anglo-celtes célébrée dans la soirée du 31 octobre, veille de la fête catholique de la Toussaint. Son nom est une contraction de l'anglais All Hallows' Eve qui signifie the eve of All Hallows' Day en anglais contemporain et peut se traduire comme « la veille de tous les saints » ou « la veillée de la Toussaint ».</p>
+				<p>En dépit de son nom d'origine chrétienne et anglaise, de multiples sources présentent Halloween comme un héritage de la fête religieuse de Samain2 qui était célébrée au début de l'automne par les Celtes et constituait pour eux une sorte de fête du Nouvel An. Halloween est ainsi connue jusqu'à nos jours sous le nom de Oíche Shamhna en gaélique. Elle est une fête très populaire en Irlande, en Écosse et au Pays de Galles où l'on trouve de nombreux témoignages historiques de son existence. Jack-o'-lantern, la lanterne emblématique d'Halloween, est elle-même issue d'une légende irlandaise.</p>
+				<p>C'est à partir du viiie siècle, sous le
+					<b>pape Grégoire III (731-741)</b>
+					et, au siècle suivant, sous le
+					<b>pape Grégoire IV (827-844)</b>, que l'Église catholique déplaça la fête de la Toussaint, qui pouvait se fêter jusqu'alors après Pâques ou après la Pentecôte, à la date du 1er novembre. Il fut avancé que l'Église chercha à recouvrir la fête du Samaïn. Ceci est toutefois à relativiser car l'Église célébrait une fête des martyrs après Pâques et lorsque la fête de la Toussaint fut instituée, celle de Samaïn était tombée en désuétude. Les Celtes possédant un calendrier lunaire, la fête du Samaïn ne pouvait tomber à échéance régulière sur le 1er novembre. La nature même de ces deux fêtes étant radicalement différentes, on ne voit guère ce qui peut rapprocher la fête des saints des catholiques, de la fête celtique du Samaïn et de son imagerie avec le Sidh.</p>
+
+			</div>
+
+			<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+				<p>La fête d'Halloween est introduite aux États-Unis et au Canada après l'arrivée massive d'émigrants irlandais et écossais notamment à la suite de la Grande famine en
+					<b>Irlande (1845-1851)</b>. Elle y gagne en popularité à partir des années 1920 et c'est sur le nouveau continent qu'apparaissent les lanternes Jack-o'-Lanterns confectionnées à partir de citrouilles, d'origine locale, en remplacement des navets utilisés en Europe.</p>
+				<p>La fête d'Halloween est aujourd'hui célébrée principalement en Irlande, en Grande-Bretagne, aux États-Unis, au Canada, en Australie et en Nouvelle-Zélande. Elle est dans une moindre mesure fêtée dans de nombreux autres pays influencés marqués par une américanisation de leur culture. La tradition moderne la plus connue veut que les enfants se déguisent avec des costumes effrayants à l'image des fantômes, des pirates, des monstres ou des vampires et aillent sonner aux portes en demandant des friandises avec la formule : Trick or treat! qui signifie « des bonbons ou un sort ! »</p>
+				<p>L'étymologie du mot « Halloween » appartient strictement à la langue anglaise, sans aucun rapport avec le gaélique ou toute autre langue celtique. Son nom actuel est une altération de All Hallows' Eve4, qui signifie littéralement « la veille de tous les saints », c'est-à-dire la veille de la fête chrétienne de la Toussaint5. Hallow est une forme archaïque du mot anglais holy et signifie « saint », even est une forme usuelle qui a formé evening, le soir6. L'orthographe Hallowe'en est encore parfois utilisée au Canada et au Royaume-Uni7, « e'en » étant la contraction de even, devenue « een ».</p>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags("about") }}
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+@import "../commons/variables";
+
+body{
+    background-color: $primary-color;
+    color: $primary-color;
+}
+
+.card img{
+    height: 200px;
+    
+}
+
+.cart-wrapper{
+    margin-bottom: 20px;
+}
+
+.cart-text{
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}

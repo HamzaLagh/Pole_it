@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Error
+{% endblock %}
+{% block
+body %}
+	<div style="margin-top: 40px"></div>
+	<div class="container text-center" style="margin-bottom: 30px">
+		<h4>Ce sujet n'éxiste pas ou alors il a été suppimé par l'auteur ou l'admin</h4>
+		<br>
+		<p>
+			Ciquez ici pour revenir à la page d'accueil
+			<a href="{{ path('app_home') }}">{{ "clique_ici" | trans }}</a>.
+		</p>
+		<p><img src="{{ asset('images/not_found.png') }}" class="img-fluid" width="300" alt=""/></p>
+	</div>
+
+{% endblock %}

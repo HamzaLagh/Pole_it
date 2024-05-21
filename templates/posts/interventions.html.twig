@@ -1,0 +1,107 @@
+{% import 'macros/pagination.html.twig' as macrosPagination %}
+{% extends
+'base.html.twig' %}
+{% block title %}Forum halloween
+{% endblock %}
+{# {% block
+link %} <link rel="canonical" href="{{ path('app_home') }}" /> {% endblock link
+%} #}
+{% block content %}Liste des forums
+{% endblock %}
+{% block stylesheets %}
+
+	{{ encore_entry_link_tags("home") }}
+{% endblock %}
+{% block body %}
+	<div class="container" style="margin-top: 110px">
+		<h3 class="text-center">Mes interventions dans le forum</h3>
+		{% if forum|length >0 %}
+			<div class="row">
+				{% for item in forum.results %}
+					{% if item.posts.visible == true %}
+						<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+							<div class="image-reader list-forum-card" style="margin-bottom:12px">
+
+								<div class="forun_header">
+									<h3>
+										<a href="{{ path('app_post_get_detail', { id: item.posts.id }) }}">{{
+        item.posts.title
+      }}</a>
+									</h3>
+									<br>
+
+									<div class="float-start">
+
+										{% if 'ROLE_ADMIN' in item.posts.users.getroles()  %}
+											<img src="{{ asset('images/profile/admin.png') }}" width="50px" alt="user"/>
+										{% else %}
+											<img src="{{ asset(urlProfil ~ item.posts.users.photo) }}" width="50px" alt="user"/>
+										{% endif %}
+
+
+										<span class="username">{{ item.posts.users.username }}</span>
+									</div><br>
+									<div class="float-end">
+										<p class="time" style="margin-bottom: 15px">
+											<small>
+												<i class="bi bi-calendar3"></i>
+												Publié
+												{{ item.posts.createdAt | date|ago(locale='fr') }}</small>
+										</p>
+									</div><br>
+
+
+								</div>
+
+								<div class="forum-list-container">
+
+									<a href="{{ path('like_post', { id: item.id }) }}" class="btn btn-link js-like">
+										{% if app.user and item.posts.isLikedByUser(app.user) %}
+											<i class="fas fa-thumbs-up fa-2x"></i>
+										{% else %}
+											<i class="far fa-thumbs-up fa-2x"></i>
+										{% endif %}
+
+										<span class="js-likes" style="font-size:16px">&nbsp;{{ item.posts.postLikes | length }}</span>
+										<span class="js-label" style="font-size:16px">
+											&nbsp;j'aime</span>
+									</a>
+
+
+									<p style="font-size:16px">
+										<small>
+											<i class="bi bi-chat"></i>
+											<b>{{ item.posts.comments | length }}</b>
+										</small>
+									</p>
+									<p style="font-size:16px">
+										<i class="bi bi-eye"></i>
+										<b>{{ item.posts.vues | length }}</b>
+									</p>
+
+
+								</div>
+							</div>
+
+						</div>
+
+					{% endif %}
+
+				{% endfor %}
+			</div>
+		{% else %}
+
+			<div class="text-center">
+				<p>Vous n'avez pas encore réagi dans le forum, ne soyez pas timide, exprimez vous 😉😉</p>
+			</div>
+		{% endif %}
+
+		<div class="paginations">
+			{{ macrosPagination.pagination_post(forum) }}
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ encore_entry_script_tags("home") }}
+
+{% endblock %}

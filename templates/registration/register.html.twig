@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription
+{% endblock %}
+{%
+block content %}S'inscrire gratuitement au site d'halloween
+{% endblock %}
+{%
+block stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+	{{ encore_entry_link_tags("register") }}
+
+{% endblock %}
+{% block body %}
+	{% for flash_error in
+app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<div style="margin-top: 150px"></div>
+	<div class="container">
+		<div class="row envelope">
+			<div class="col-lg-2 col-sm-12 col-md-12"></div>
+			<div class="col-lg-8 col-sm-12 col-md-12">
+				<div class="wrapper">
+					<h1 class="text-center">inscription</h1>
+
+					<div class="p-3" data-turbo="true">
+						{{ form_start(registrationForm) }}
+						<div class="row">
+							<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								{{ form_row(registrationForm.username) }}
+							</div>
+							<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								{{ form_row(registrationForm.email) }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-sm-12 col-md-6 col-lg-6 pass">
+								{{ form_row(registrationForm.plainPassword) }}
+								<span class="eye-span">
+									<i class="toggle-password fa fa-eye" aria-hidden="true"></i>
+								</span>
+							</div>
+
+							<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								<br>
+								<br>
+								{{ form_row(registrationForm.agreeTerms) }}
+							</div>
+						</div>
+
+
+						<button type="submit" class="btn button">
+							S'inscrire
+						</button>
+						<div class="loader">
+							<img src="{{ asset('images/loader.gif') }}" alt=""/>
+						</div>
+						{{ form_end(registrationForm) }}
+
+						<em>
+							Déjà un compte? &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="{{ path('app_login') }}">
+								Se connecter</a>
+						</em>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-sm-12 col-md-12"></div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags("register") }}
+
+{% endblock %}

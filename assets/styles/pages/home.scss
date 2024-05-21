@@ -1,0 +1,639 @@
+@import "../commons/variables";
+@import "../commons/mixins";
+@import "../commons/global";
+
+
+a {
+    text-decoration: none;
+}
+
+.text-overflow {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+p {
+    font-size: 16px;
+}
+
+h2 a {
+    color: $black-color;
+    text-transform: capitalize;
+}
+
+h2 a:hover {
+    color: $green-color;
+
+}
+
+.forum-list-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.time {
+    color: #868181;
+    font-size: 14px;
+    opacity: .5;
+
+}
+
+
+
+.username {
+    color: $searbarbg;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.comment {
+    background-color: #ececec;
+    border-bottom: 3px solid #7b7b7b;
+    margin-bottom: 18px;
+    padding: 15px;
+    border-radius: 3px;
+
+}
+
+
+
+.banniere {
+
+    margin-top: -20px;
+    position: relative;
+}
+
+marquee p {
+    font-size: 24px;
+    margin-top: 15px;
+    color: $primary-color;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.list-forum-card {
+    padding: 15px;
+}
+
+
+.image-reader img {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.forun_header h3 {
+    color: #242526;
+}
+
+.img-description {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.main-posts h1 {
+    position: relative;
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.main-posts h1::before {
+    content: " ";
+    height: 3px;
+    width: 410px;
+    background: $yello-color;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -310px;
+}
+
+.main-posts h1::after {
+    content: " ";
+    height: 3px;
+    width: 410px;
+    background: $yello-color;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -310px;
+}
+
+.costume {
+    margin-top: -60px;
+}
+
+.categorie-description {
+    margin-top: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: $black-color;
+    font-weight: bold;
+}
+
+
+
+.main-posts h1,
+.partenaires h1 {
+    position: relative;
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.partenaires h1::before {
+    content: " ";
+    height: 3px;
+    width: 410px;
+    background: $yello-color;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -340px;
+}
+
+.partenaires h1::after {
+    content: " ";
+    height: 3px;
+    width: 410px;
+    background: $yello-color;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -340px;
+}
+
+
+span.js-likes,
+span.js-label {
+    font-size: 29px;
+}
+
+.forum-entete {
+    font-weight: bold;
+    margin-top: 22px;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    color: $black-color;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banniere {
+    margin-top: -40px;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.media .fa {
+    font-size: 47px;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+
+
+.section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+#welcome {
+    padding: 60px 0;
+    font-size: 12px;
+
+}
+
+#welcome-inner {
+    position: relative;
+}
+
+#welcome-inner ::before {
+    position: absolute;
+    left: -10px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    content: "";
+    border-left: 5px solid $primary-color;
+    border-top: 5px solid $primary-color;
+    transition: 0.5s;
+}
+
+#welcome-inner ::after {
+
+    // border-left: 2px solid yellow;
+    // border-right: 2px solid yellow;
+    width: 60px;
+    position: absolute;
+    right: 20px;
+    bottom: -1px;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    content: "";
+    border-right: 5px solid $primary-color;
+    border-bottom: 5px solid $primary-color;
+    transition: 0.5s;
+}
+
+.courses {
+    background-color: $primary-color;
+    color: #ffffff;
+    padding: 80px 0;
+}
+
+.visa {
+    color: $primary-color;
+}
+
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+
+#counts {
+    background-color: #ffffff;
+}
+
+.counts {
+    padding: 30px 0;
+
+}
+
+.counts .counters span {
+    font-size: 48px;
+    display: block;
+    color: $primary-color;
+    font-weight: 700;
+
+}
+
+.counts .counters p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #37423b;
+}
+
+
+/*--------------------------------------------------------------
+# Services List Section
+--------------------------------------------------------------*/
+
+.services {
+    margin-bottom: 40px;
+    font-size: 38px;
+}
+
+.services::after {
+    content: "";
+    width: 120px;
+    height: 2px;
+    display: inline-block;
+    background: #fff;
+    margin: 4px 10px;
+}
+
+.services-list .service-item {
+    position: relative;
+}
+
+.services-list .service-item .icon i {
+    font-size: 32px;
+    line-height: 0;
+    margin-right: 20px;
+    color: #38618e;
+}
+
+.services-list .service-item .title {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.services-list .service-item .title a {
+    color: var(--color-secondary);
+}
+
+.title a:hover {
+    cursor: none
+}
+
+
+.services-list .service-item .description {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+
+.temoignages {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.temoignages p {
+    font-size: 16px;
+}
+
+.temoignage {
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.temoignage::after {
+    content: "";
+    width: 120px;
+    height: 2px;
+    display: inline-block;
+    background: #222427;
+    margin: 4px 10px;
+}
+
+// .temoignage-inner{border: 2px solid $primary-color;}
+
+
+.wrapper {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+}
+
+.border-image {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $primary-color;
+    font-weight: 700;
+    @include border-image;
+    margin-top: 50px;
+}
+
+// debut caroussel
+
+.slider{
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .slider .card{
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    
+  }
+  .slider .card .img{
+    height: 200px;
+    width: 100%;
+    
+  }
+  .slider .card .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    
+  }
+  .slider .card .content{
+    padding: 10px 20px;
+    
+   
+   
+   
+  }
+
+  .article-content{
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+
+  }
+  .card .content .title{
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .card .content .sub-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #e74c3c;
+    line-height: 20px;
+  }
+  .card .content p{
+    text-align: justify;
+    margin: 10px 0;
+  }
+  .card .content .btn{
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+  }
+  .card .content .btn button{
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .card .content .btn button:hover{
+    transform: scale(0.9);
+  }
+
+  .carousel h2{color: #fff; text-align: center; margin-top: 40px; margin-bottom: 30px;font-size: 32px; text-decoration: underline;}
+//   fin carousel
+  
+
+
+ 
+@media (max-width: 501px) {
+    h2{font-size: 20px !important;}
+    .text-center{line-height: 32px;}
+    #welcome-inner ::before {
+      left: 1px;
+      top: 76px;
+    }
+
+    #welcome-inner ::after{
+        right: 1px;
+        bottom: 10px;
+    }
+
+    .courses{padding: 56px 0;}
+    .counts .counters span {font-size: 28px;}
+    .counts .counters p{font-size: 13px;}
+    .temoignage {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .temoignages p {
+        font-size: 14px;
+    }
+
+   
+    .navbar .links li .sub-menu{word-wrap: break-word;}
+}
+
+
+.astro-button{
+    margin-top: 15px;
+    border: 1px solid #37423b;
+    border-radius: 18px;
+    background-color: transparent;
+    color: #fff;
+    padding: 15px;
+}
+
+
+#astro-text{
+    position: absolute;
+   // top: 190px;
+    top: 13vw;
+    max-width: 500px;
+    color: #000;
+}
+
+#astro-text h1{color: #000; margin-bottom: 20px; text-transform: uppercase;}
+#astro-text p{font-weight: 500;}
+
+.marquee{
+    height: 50px;
+    padding-bottom: 15px;
+    background-color: #000;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+}
+
+.marquee p{
+   padding-bottom: 90px;
+    color: #fff;
+}
+
+.activites{color: #fff;margin-top: 40px;}
+
+.activites h2{color: #fff; text-align: center; margin-bottom: 20px; }
+
+.spec{
+   // width: 90px;
+    color: #fff;
+    margin-bottom: 15px;
+   // filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(110%) contrast(101%);
+
+    width: 27%;
+    filter: brightness(200%) contrast(200%) saturate(100%) blur(0px) hue-rotate(0deg);
+}
+
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    animation: rotating 52s linear infinite;
+   
+    position: absolute;
+    top: 2px;
+    left: -80px;
+    width: 520px;
+  }
+
+  .rotating-deux{
+    animation: rotating 52s reverse infinite;
+   
+    position: absolute;
+    top: 2px;
+    left: -80px;
+    width: 520px;
+  }
+
+  .centre-spatial{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .centre-spatial-text{
+    word-wrap: break-word;
+   
+    padding: 30px;
+   
+    height: 500px;
+    
+  }
+
+  .centre-spatial-text-first{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #solar-system{margin-top: 30px;margin-bottom: 40px;color: #fff;}
+  #solar-system header{text-align: center; margin-top: 20px; margin-bottom: 50px;}
+  #solar-system header h1{color: #fff;}
+  .solar-system{text-align: center; }
+  .solar-system h2{color: #fff; font-size: 28px;margin-top: 20px;}
+  .venus{width: 380px;}
+  .planete{width: 240px;}
+  #observatoires{color:#fff; margin-top: 40px; margin-bottom: 30px;}
+  .observatoire h2,.planetarium h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+

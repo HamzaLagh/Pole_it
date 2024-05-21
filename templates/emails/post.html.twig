@@ -1,0 +1,21 @@
+{% extends 'emails/base.html.twig' %}
+{% block title %}Publication dans le forum
+{% endblock %}
+{% block username %}
+	<b>{{ user.username }}</b>
+	a écrit dans le forum
+{% endblock %}
+{%
+block body %}
+
+	<br/>
+
+	<h4>{{title}}</h4>
+	<p>{{content}}</p>
+	{% apply inline_css(source('@styles/email.css')) %}
+
+	<button type="button" class="button-email">
+		<a href="{{ absolute_url(path('app_post_get_detail', { id: id})) }}">Afficher dans le forum</a>
+	</button>
+	{% endapply %}
+{% endblock %}

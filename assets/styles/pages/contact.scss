@@ -1,0 +1,91 @@
+@import "../commons/variables";
+@import "../commons/mixins";
+@import "../commons/global";
+
+
+
+
+h1 {
+  color: $primary-color;
+  margin-top: 20px;
+  margin-top: 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+.info-website h2 {
+  color: #002950;
+  margin-bottom: 40px;
+}
+
+.info-website img {
+  width: 350px;
+}
+
+
+body {
+  background: #f0f2f5;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.image-reader {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+}
+
+.image-reader img {
+  border-radius: 5px;
+}
+
+.first-bloc {
+  margin-bottom: 20px;
+}
+
+.contact {
+  background-color: #fff;
+  padding: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contact h2 {
+  color: #002950;
+  margin-bottom: 40px;
+}
+
+.contact label {
+  color: #002950;
+}
+
+.contact-send-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-send-button button {
+  padding: 10px;
+}
+
+
+
+
+.nom-warning,
+.prenom-warning,
+.phone-warning,
+.email-warning,
+.adresse-warning,
+.message-warning {
+  display: none;
+}

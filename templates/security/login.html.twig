@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %} {% block title %}Connexion{% endblock %} {% block content %}Se connecter au plus grand site d'halloween{% endblock %} {% block
+stylesheets %}
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+{{ encore_entry_link_tags("register") }}
+
+{% endblock %} {% block body %} {% for flash_error in
+app.flashes('verify_email_error') %}
+<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+{% endfor %}
+
+<div class="container" style="margin-top:150px">
+  <div class="row envelope">
+    <div class="col-lg-2 col-sm-12 col-md-12"></div>
+    <div class="col-lg-8 col-sm-12 col-md-12">
+      <div class="wrapper">
+        <h1 class="text-center login">Connexion</h1>
+
+        <div class="p-3" data-turbo="true">
+          <form method="post">
+            {% if error %}
+            <div class="alert alert-danger">
+              {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+            {% endif %} 
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <label for="inputEmail">adresse email</label>
+                <input
+                  type="email"
+                  value="{{ last_username }}"
+                  name="email"
+                  id="inputEmail"
+                  class="form-control"
+                  autocomplete="email"
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 pass">
+                <label for="inputPassword">Mot de passe</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="inputPassword"
+                  class="form-control password"
+                  autocomplete="current-password"
+                  required
+                />
+
+                <span class="eye-span-login">
+                  <i class="toggle-password fa fa-eye" aria-hidden="true"></i
+                ></span>
+
+                <input
+                  type="hidden"
+                  name="_csrf_token"
+                  value="{{ csrf_token('authenticate') }}"
+                />
+              </div>
+            </div>
+
+            <button class="btn button" type="submit">
+              Se connecter
+            </button>
+            <div class="loader">
+              <img src="{{ asset('images/loader.gif') }}" alt="" />
+            </div>
+          </form>
+
+          <em>
+            Pas encore de compte?
+            <a href="{{ path('app_register') }}">S'inscrire</a>
+          </em>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <em>
+           Mot de passe oublié?
+            <a href="{{ path('forgotten_password') }}">Récuperer le mot de passe</a>
+          </em>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-sm-12 col-md-12"></div>
+  </div>
+</div>
+{% endblock %} {% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("register") }}
+
+{% endblock %}

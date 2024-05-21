@@ -1,0 +1,56 @@
+@import "../commons/variables";
+@import "../commons/mixins";
+@import "../commons/global";
+
+// .submit{
+//     @include postbutton($color, $backround)
+// }
+
+
+
+@media (min-width: 200px) and (max-width: 500px) {
+    .wrapper{background-color: aqua;}
+html{height: 350px;}
+}
+
+
+.pass{position: relative;}
+
+.eye-span{
+    position: absolute;
+    right: 15px;
+    transform: translate(0,-50%);
+    top: 62%;
+    cursor: pointer;
+}
+
+.eye-span-login{
+    position: absolute;
+        right: 15px;
+        transform: translate(0, -50%);
+        top: 72%;
+        cursor: pointer;
+}
+
+.toggle-password{
+    font-size: 20px;
+    color: #7a797e;
+}
+
+.tag-green {
+    color: $green-color;
+}
+
+.tag-red{
+   color: $primary-color-second;
+}
+
+.bi-check-lg{
+    color:$green-color;
+    margin-left: 10px;
+}
+
+.bi-x-circle{
+    color: $primary-color-second;
+    margin-left: 10px;
+}

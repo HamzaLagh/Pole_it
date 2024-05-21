@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block title %}Boutique
+{% endblock %}
+{% block content %}
+	Nos articles en vente
+{% endblock content %}
+{% block
+stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+	{{ encore_entry_link_tags("product") }}
+
+{% endblock %}
+{% block body %}
+
+	<div>
+		<div class="cart">
+			<h2 class="cart-title">Your Cart</h2>
+			<div class="cart-content"></div>
+			<div class="total">
+				<div class="total-title">Total</div>
+				<div class="total-price">0,00 €</div>
+			</div>
+			<button type="button" class="btn-buy">Buy Now</button>
+
+			<i class="bx bx-x" id="close-cart"></i>
+		</div>
+	</div>
+
+
+	<section class="shop container">
+		<h2 class="section-title">Liste de nos articles</h2>
+		<div class="shop-content ">
+			{% for item in articles %}
+				<div class="product-box" articleid="{{item.id}}">
+					<img src="{{ asset(url ~ item.image) }}" alt="{{item.title}}" class="product-img">
+					<h2 class="product-title">{{item.title}}</h2>
+					<span class="price">{{item.price}}
+						€</span>
+					<i class="bx bx-shopping-bag add-cart"></i>
+				{% endfor %}
+
+
+				{# <div class="product-box" articleid="1">
+																				<img src="{{ asset('images/shopping/product1.jpg') }}" alt="Black t - shirt " class="product-img">
+																				<h2 class="product-title">BLACK SHIRT</h2>
+																				<span class="price">8,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="2">
+																				<img src="{{ asset('images/shopping/product2.jpg') }}" alt="An in - ear bluetooth earbud case in black" class="product-img">
+																				<h2 class="product-title">BLACK SHIRT</h2>
+																				<span class="price">95,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="3">
+																				<img src="{{ asset('images/shopping/product3.jpg') }}" alt="The hooded jacket with a fur collar" class="product-img">
+																				<h2 class="product-title">PARKA</h2>
+																				<span class="price">49,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="4">
+																				<img src="{{ asset('images/shopping/product4.jpg') }}" alt="A blue, plastic bottle" class="product-img">
+																				<h2 class="product-title">METAL BOTTLE</h2>
+																				<span class="price">24,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="5">
+																				<img src="{{ asset('images/shopping/product5.jpg') }}" alt="A black baseball cap" class="product-img">
+																				<h2 class="product-title">BLACK HAT</h2>
+																				<span class="price">12,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="6">
+																				<img src="{{ asset('images/shopping/product5.jpg') }}" alt="Green backpack with black straps" class="product-img">
+																				<h2 class="product-title">BACKPACK</h2>
+																				<span class="price">64,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="7">
+																				<img src="{{ asset('images/shopping/product7.jpg') }}" alt="Black sneakers with low top" class="product-img">
+																				<h2 class="product-title">SNEAKERS</h2>
+																				<span class="price">79,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div>
+																			<div class="product-box" articleid="8">
+																				<img src="{{ asset('images/shopping/product8.jpg') }}" alt="A pair of silver sunglasses with grey lens and a metal frame" class="product-img">
+																				<h2 class="product-title">SUNGLASSES</h2>
+																				<span class="price">29,95 €</span>
+																				<i class="bx bx-shopping-bag add-cart"></i>
+																			</div> #}
+			</div>
+		</section>
+
+
+	{% endblock %}
+	{% block javascripts %}
+		{{ parent() }}
+		{{ encore_entry_script_tags("product") }}
+
+
+	{% endblock %}

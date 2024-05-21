@@ -1,0 +1,26 @@
+{% extends 'emails/base.html.twig' %}
+{% block title %}Activation de compte
+{% endblock %}
+{% block username %}
+	Bonjour
+
+	<b>{{ user.username }}</b>
+{% endblock %}
+{%
+block body %}
+	<p>Bienvenue sur
+		<b>Monvisa</b>
+	</p>
+	<p>
+		Veuillez valider votre compte en cliquant sur le lien ci-dessous :
+	</p>
+	<br/>
+	<p>
+		<a href="{{ absolute_url(path('verify_user', { token: token })) }}">{{
+    absolute_url(path("verify_user", { token: token }))
+  }}</a>
+	</p>
+	<br/>
+	<p>Ce lien expirera dans 3 heures</p>
+
+{% endblock %}

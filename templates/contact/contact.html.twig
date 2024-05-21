@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact
+{% endblock %}
+{% block content %}
+	Nous contacter
+{% endblock content %}
+{% block
+stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+	{{ encore_entry_link_tags("contact") }}
+
+{% endblock %}
+{% block body %}
+
+	<marquee behavior="" direction="">
+		<h1>Nous sommes à votre écoute, laissez-nous un message
+		</h1>
+	</marquee>
+
+	<div class="container">
+
+
+		<div class="contact" data-aos="fade-left" data-aos-duration="2000">
+			<div class="container" data-turbo="true">
+				<h2 class="text-center">Contactez-nous</h2>
+				{{ form_start(form) }}
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+						{{ form_row(form.nom) }}
+
+
+						<br/>
+						{{ form_row(form.telephone) }}
+
+						<br/>
+					</div>
+
+					<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+						{{ form_row(form.email) }}
+
+						<br/>
+
+						{{ form_row(form.content) }}
+
+						<br/>
+					</div>
+				</div>
+				
+
+				<button type="submit" id="contact-me" class="contact-send-button btn button">Envoyer le message</button>
+
+				<div class="loader">
+					<img src="{{ asset('images/loader.gif') }}" alt=""/>
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags("contact") }}
+
+
+{% endblock %}

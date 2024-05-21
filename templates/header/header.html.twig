@@ -1,0 +1,127 @@
+{% block stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+	{{ encore_entry_link_tags("header") }}
+
+{% endblock %}
+
+
+<nav>
+	<div class="navbar">
+		<i class='bx bx-menu'></i>
+		<div class="logo">
+			<a href="{{ path('app_home') }}" class="{% if app.session.get('menu') == 'home' %} active{% endif %}"><img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="user"/></a>
+		</div>
+		<div class="nav-links">
+			<div class="sidebar-logo">
+				<span class="logo-name"><img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="user"/></span>
+				<i class='bx bx-x'></i>
+			</div>
+			<ul class="links">
+				<li class="menu">
+					<a class="nav-link scrollto {% if app.session.get('menu') == 'contact' %} active{% endif %}" href="{{ path('app_contact') }}">Planetarium</a>
+				</li>
+				<li class="menu">
+					<a class="nav-link scrollto {% if app.session.get('menu') == 'contact' %} active{% endif %}" href="{{ path('app_contact') }}">Observatoire</a>
+				</li>
+
+
+				<li>
+					<a href="#" class="{% if app.session.get('menu') == 'demarches' %} active{% endif %}">Expositions</a>
+					<i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
+					<ul class="htmlCss-sub-menu sub-menu">
+						<li>
+							<a class="nav-link scrollto " href="">Expositions en journée</a>
+						</li>
+						<li>
+							<a class="nav-link scrollto " href="{{ path('app_nuits_activites') }}">expositions nocturnes</a>
+						</li>
+						<li>
+							<a class="nav-link scrollto " href="{{ path('app_enfants') }}">Activités quotidiennes pour petits et grands</a>
+						</li>
+
+					</ul>
+				</li>
+
+				{% if app.user %}
+					<li>
+						<a class="nav-link scrollto " href="{{ path('app_post_forum') }}">Forum</a>
+					</li>
+				{% endif %}
+
+				<li class="menu">
+					<a class="nav-link scrollto {% if app.session.get('menu') == 'boutique' %} active{% endif %}" href="{{ path('app_shop') }}">Boutique</a>
+				</li>
+
+				<li class="menu">
+					<a class="nav-link scrollto {% if app.session.get('menu') == 'contact' %} active{% endif %}" href="{{ path('app_contact') }}">Contact</a>
+				</li>
+
+
+				{% if app.user == null %}
+					<li>
+						<a href="#">S'identifier</a>
+						<i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
+						<ul class="htmlCss-sub-menu sub-menu">
+							<li>
+								<a class="nav-link scrollto " href="{{ path('app_register') }}">S'inscrire</a>
+							</li>
+							<li>
+								<a class="nav-link scrollto " href="{{ path('app_login') }}">Se connecter</a>
+							</li>
+
+
+						</ul>
+					</li>
+
+				{% endif %}
+
+				{% if app.user %}
+
+					<li>
+						<a href="#">
+							<span>
+								<strong>{{app.user.username}}</strong>
+							</span>
+						</a>
+						<i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
+						<ul class="htmlCss-sub-menu sub-menu">
+							<li data-turbo="true">
+								<a class="nav-link scrollto " href="">Mes interventions</a>
+							</li>
+							<li data-turbo="true">
+								<a class="nav-link scrollto " href="{{ path('app_logout') }}">Se déconnecter</a>
+							</li>
+
+						</ul>
+					</li>
+
+				{% endif %}
+
+				<li>
+					<a class="nav-link scrollto ">
+						<i class="bi bi-cart" id="cart-icon"></i>
+
+
+						<small class="cart-qty">0</small>
+
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<div class="search-box">
+			<i class='bx bx-search'></i>
+			<div class="input-box">
+				<input type="text" id="recherche" placeholder="Chercher un sujet">
+				<div id="searchData"></div>
+			</div>
+		</div>
+
+	</div>
+</nav>
+
+
+{% block javascripts %}
+	{{ encore_entry_script_tags("header") }}
+
+{% endblock %}

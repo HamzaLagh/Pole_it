@@ -1,0 +1,13 @@
+controllers:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+homepage:
+  path: /
+  controller: App\Controller\HomeController::index
+  requirements:
+    _locale: "%app_locales%"
+  defaults:
+    _locale: "%locale%"

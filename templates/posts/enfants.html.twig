@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact
+{% endblock %}
+{% block content %}
+	Activités pour enfants
+{% endblock content %}
+{% block
+stylesheets %}
+	{{ encore_entry_link_tags("activite") }}
+
+{% endblock %}
+{% block body %}
+<div>
+<p><img src="{{ asset('images/astro/astronomie-maternelle.jpg') }}" class="img-fluid " width="100%" alt="enfants_activites"></p>
+</div>
+<div class="container">
+
+<h1>Activités quotidien pour petits et grands</h1>
+<div class="row">
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/invitation-danniversaire-espace-par-tte-modeler.png') }}" class="img-fluid " alt="invitation-danniversaire-espace-par-tte-modeler"></p>
+<h4>Invitation d'anniversaire de l'espace</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/enveloppe-spatiale-pour-invitation-de-lespace-par-tete-a-modeler.png') }}" class="img-fluid " alt="enveloppe-spatiale-pour-invitation-de-lespace-par-tete-a-modeler"></p>
+<h4>Enveloppe spatiale pour l'invitation de l'espace</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/ronds-de-serviettes-et-gobelets-danniversaire-de-lespace-par-tete-a-modeler.png') }}" class="img-fluid " alt="ronds-de-serviettes-et-gobelets-danniversaire-de-lespace-par-tete-a-modeler"></p>
+<h4>Ronds de serviettes et gobelets d'anniversaire de l'espace</h4>
+</div>
+</div>
+{# fin anniversaire #}
+<div class="row">
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/fanions-et-cake-toppers-de-lespace-par-tete-a-modeler.png') }}" class="img-fluid " alt="fanions-et-cake-toppers-de-lespace-par-tete-a-modeler"></p>
+<h4>Fanions et Cake Toppers de l'espace</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/deguisement-de-lespace-la-selection-de-tete-a-modeler.png') }}" class="img-fluid " alt="deguisement-de-lespace-la-selection-de-tete-a-modeler"></p>
+<h4>Deguisement espace:notre espace shopping</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-12 item">
+<p><img src="{{ asset('images/astro/jeux.png') }}" class="img-fluid " alt="jeux"></p>
+<h4>13 super livres sur l'astronomie pour les enfants qui aiment l'espace</h4>
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+
+	{{ encore_entry_script_tags("activite") }}
+
+
+{% endblock %}

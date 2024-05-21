@@ -1,0 +1,7 @@
+@import "../commons/variables";
+@import "../commons/mixins";
+@import "../commons/global";
+
+body{background-color: $primary-color;color: #fff;}
+h1{text-align: center; margin-top: 40px; margin-bottom: 40px;text-decoration: underline;}
+.tem{margin-bottom: 30px;}

@@ -1,0 +1,16 @@
+@import "../commons/variables";
+@import "../commons/mixins";
+@import "../commons/global";
+
+@media (max-width: 991px) {
+   .wrapper h1{font-size: 15px;font-weight: 600;}
+   
+}
+
+label[for="posts_images"] {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+#publication{margin-top: 140px;}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Error
+{% endblock %}
+{% block
+body %}
+	<div style="margin-top: 40px"></div>
+	<div class="container text-center" style="margin-bottom: 30px">
+		<h4>Access interdit</h4>
+		<br>
+		<p>
+			Ciquez ici pour revenir à la page d'accueil
+			<a href="{{ path('app_home') }}">{{ "clique_ici" | trans }}</a>.
+		</p>
+		<p><img src="{{ asset('images/denied.jpg') }}" class="img-fluid" width="300" alt=""/></p>
+	</div>
+
+{% endblock %}

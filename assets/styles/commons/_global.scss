@@ -1,0 +1,273 @@
+@import "../commons/variables";
+
+// @font-face{
+//     font-family : 'RAVIE';
+//     src : url('fonts/RAVIE.ttf') format('truetype');
+// }
+
+html {
+    /* 62.5% of 16px browser font size is 10px */
+    font-size: 62.5%;
+
+}
+
+html,body{overflow-x: hidden;}
+
+.turbo-progress-bar {
+    background-color: $primary-color;
+}
+
+
+p {
+    font-size: 1.4em;
+    /* j'ai une taille équivalente à 18px */
+}
+
+
+
+body {
+    background: $primary-color;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+.image-reader {
+    background: #fcfcf1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+}
+
+.bi-geo-alt {
+    color: $green-color
+}
+
+.bi-suit-heart-fill {
+    color: $primary-color;
+}
+
+.share a {
+    color: #000;
+}
+
+.share a:hover {
+    text-decoration: underline;
+    color: #256AA6;
+}
+
+.paginations {
+    margin-top: 20px;
+    margin-bottom: 15px
+}
+
+.wrapper {
+    @include bg-box-shadow;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: $primary-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: $primary-color-second;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.button {
+    @include postbutton(#fff, $primary-color);
+    margin-bottom: 15px;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+
+
+.patienter {
+    @include postbutton(#000, $light-color);
+    margin-bottom: 15px;
+    margin-top: 12px;
+    text-transform: uppercase;
+    pointer-events: none;
+
+}
+
+.button:hover {
+    color: $black-color;
+}
+
+.form-label,
+.form-check-label {
+
+    font-size: 15px;
+}
+
+.form-control,
+.form-select {
+    background-color: rgb(232, 240, 254);
+    font-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.gallery {
+    padding-bottom: 0;
+}
+
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+
+}
+
+.gallery .gallery-item img {
+    margin: 5px;
+    transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+}
+
+
+.publish-annonce {
+    background-color: $primary-color;
+    border-radius: 7px;
+    margin-left: 15px;
+    padding: 4px;
+    padding-right: 25px;
+    width: fit-content;
+}
+
+.annonce {
+    color: #fff;
+}
+
+.fa-plus {
+    margin-right: 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+
+
+// custum scrollbar
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+
+    background-color: $primary-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background-color: #256AA6;
+}
+
+// end custum scrollbar
+
+// gif loader
+
+.loader {
+    display: none;
+    margin-top: -140px;
+    text-align: center;
+}
+
+.loader-display {
+    display: none;
+    margin-top: -140px;
+    text-align: center;
+}
+
+/// nouveau
+
+.time {
+    color: #696969;
+    font-size: 11px;
+    opacity: .5;
+    text-decoration: underline;
+}
+
+.comment {
+    background-color: #ececec;
+    border-bottom: 3px solid #7b7b7b;
+    margin-bottom: 18px;
+    padding: 15px;
+    border-radius: 3px;
+
+}
+
+
+
+.message-button{
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, $primary-color, darkorchid) border-box;
+border-radius: 50em;
+border: 4px solid transparent;
+display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  color: $primary-color;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.contact-button {
+    margin-bottom: 30px;
+}

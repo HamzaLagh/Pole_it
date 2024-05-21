@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://jaimesa.net/sitemap.xml

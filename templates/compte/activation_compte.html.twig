@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %} {% block title %}connexion{%
+endblock %} {% block content %}{{ "entete1" | trans }}{% endblock %} {% block
+stylesheets %}
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+{{ encore_entry_link_tags("register") }}
+
+{% endblock %} {% block body %}
+<div style="margin-top: 90px"></div>
+<div class="container text-center">
+  <div class="message" style="margin-bottom: 40px">
+    <strong>Votre compte n'est pas activé</strong
+    >,
+    <a href="{{ path('resend_verif') }}">Renvoyer le lien d'activation de compte</a>
+  </div>
+</div>
+{% endblock %} {% block javascripts %}
+{{ encore_entry_script_tags("register") }}
+
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+{% block title %}Activités nocturnes
+{% endblock %}
+{% block content %}
+	Activités nocturnes de PoleIt
+{% endblock content %}
+{% block
+stylesheets %}
+	{{ encore_entry_link_tags("nuit") }}
+
+{% endblock %}
+{% block body %}
+	<div class="container">
+
+		<br>
+		<br><br>
+		<div class="row bg-dark align-items-center justify-content-center text-white ">
+			<h1 class="text-center ">Activités nocturnes d'astronomie chez PoleIt d'Orléans</h1>
+		</div>
+		<br>
+		<div class="row">
+			<div class="row align-items-center justify-content-center ">
+				Découvrez les mystères de l'univers avec nous !
+			</div>
+		</div>
+
+		<br>
+		<div>
+			<div class="row ">
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card  ">
+						<img src=" {{ asset('images/nuits/soleil.jpeg') }}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Observations Solaires</h5>
+							<p class="card-text">Observez notre étoile, le Soleil, en toute sécurité avec nos télescopes spécialement équipés.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/atl.jpg') }} " class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Ateliers Pédagogiques</h5>
+							<p class="card-text">Apprenez-en davantage sur les étoiles, les planètes et plus encore avec nos ateliers pour tous les âges.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card ">
+						<img src="{{ asset('images/nuits/visite.jpg') }}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Visites Guidées du Centre</h5>
+							<p class="card-text">Plongez dans le monde de l'astronomie à travers nos visites guidées interactives.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card ">
+						<img src="{{ asset('images/nuits/parcnaturel.jpeg')}}" height="50%" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Observations Astronomiques:</h5>
+							<p class="card-text">
+								Utilisez notre radiotélescope géant pour explorer les galaxies lointaines et les nébuleuses.</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card ">
+						<img src="{{ asset('images/nuits/fusee.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Construction de Fusées</h5>
+							<p class="card-text">Participez à des ateliers où vous pouvez construire et lancer vos propres petites fusées.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/randonne.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Randonnées Astronomiques</h5>
+							<p class="card-text">
+								Partez pour une randonnée éducative à travers des sentiers où vous pourrez apprendre sur les constellations et l'histoire de l'astronomie</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/planetarium.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Planétarium</h5>
+							<p class="card-text">Profitez de spectacles immersifs au planétarium pour une expérience inoubliable.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/camps.jpg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Camps d'Observation:</h5>
+							<p class="card-text">Passez une nuit entière sous les étoiles lors de nos camps d'observation pour les passionnés d'astronomie.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/soiree.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Soirées à Thème:</h5>
+							<p class="card-text">Participez à nos soirées spéciales dédiées aux phénomènes célestes et à la découverte de l'univers.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/etoile.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Exploration de la Lune</h5>
+							<p class="card-text">Découvrez les secrets de notre satellite naturel à travers des activités interactives et des modèles en 3D.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/astrologie.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Astronomie et Mythologie</h5>
+							<p class="card-text">Vivez l'expérience magique des pluies de météores lors de nos soirées d'observation spéciales.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 cart-wrapper">
+					<div class="card">
+						<img src="{{ asset('images/nuits/etoilefilante.jpeg')}}" class="card-img-top" alt="...">
+						<div class="card-body ">
+							<h5 class="card-title">Observation des Étoiles Filantes</h5>
+							<p class="card-text">Vivez l'expérience magique des pluies de météores lors de nos soirées d'observation spéciales.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascripts %}
+
+	{{ encore_entry_script_tags("nuit") }}
+
+
+{% endblock %}

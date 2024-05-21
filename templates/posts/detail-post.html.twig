@@ -1,0 +1,204 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ post.title }}
+	-
+	{{ post.category.nom }}
+{% endblock %}
+{% block content %}{% endblock %}
+{% block stylesheets %}
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+	{{ encore_entry_link_tags("home") }}
+	{{ encore_entry_link_tags("add-image-post") }}
+	{{ encore_entry_link_tags("publication") }}
+	{{ encore_entry_link_tags("control-emoji") }}
+	{{ encore_entry_link_tags("posts-detail") }}
+
+{% endblock %}
+{% block body %}
+	<div class="container url-detect" id="publication" style="margin-top: 110px">
+		<div class="titre">
+			<h2>{{ post.title }}</h2>
+		</div>
+		{% if post.closed == true %}
+			<div class="resolu">
+				<span>
+					<i class="bi bi-check-lg"></i>
+				</span>&nbsp;&nbsp;
+				<span>Sujet fermé</span>
+			</div>
+		{% endif %}
+		<div class="sujet" topicid="{{ post.id }}">
+			<div class="row">
+				<div class="col-md-2">
+					<p>{{ post.users.username }}</p>
+					<p>
+						{% if 'ROLE_ADMIN' in post.users.getroles() %}
+							<img src="{{ asset('images/profile/admin.png') }}" width="50px" alt="user"/>
+						{% else %}
+							<img src="{{ asset(urlProfil ~ post.users.photo) }}" alt="user" width="50px"/>
+						{% endif %}
+
+					</p>
+				</div>
+				<div class="col-md-10">
+					<div class="time">
+						<p style="margin-bottom: 15px">
+							<small>
+								{{ post.createdAt | date|ago(locale='fr') }}</small>
+						</p>
+					</div>
+
+					<p id="pub-content">
+						{{ post.content }}
+					</p>
+					{# {{ dump(post.imagesPosts|length) >0}} #}
+
+					{% if post.imagesPosts|length >0 %}
+
+						<div class="row" style="margin-top:20px">
+							{% for imagepost in post.imagesPosts %}
+								<div class="col-md-3 col-lg-3 col-sm-12">
+									<p>
+										<img src="{{ asset(urlPublication ~ imagepost.nom) }}" class="img-fluid post-image" alt=""/>
+									</p>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="text-center actions-buttons">
+				{% if post.closed == false %}
+					{% if is_granted('POST_EDIT', post) %}
+						<div class="resolve">
+							<li class="close-forum">
+								<a href="{{ path('app_post_close', { id: post.id }) }}">
+									<i class="bi bi-check-lg"></i>
+									<span class="post-delete">&nbsp;&nbsp;Fermer le sujet
+									</span>
+								</a>
+							</li>
+						</div>
+					{% endif %}
+				{% endif %}
+				{% if post.closed == false %}
+					{% if
+      is_granted('POST_EDIT', post) %}
+						<li class="edit">
+							<a href="{{ path('app_post_edit', { id: post.id }) }}">
+								<i class="bi bi-pencil edit-button"></i>
+								<span class="post-edit">&nbsp;&nbsp;Modifier le sujet
+								</span>
+							</a>
+						</li>
+					{% endif %}
+				{% endif %}
+				{% if is_granted('POST_EDIT', post) %}
+					<li class="delete-topic">
+						<a href="{{ path('app_post_delete_topic', { id: post.id }) }}">
+							<i class="bi bi-trash text-danger delete-button"></i>
+							<span class="post-delete">&nbsp;&nbsp;Supprimer le sujet
+							</span>
+						</a>
+					</li>
+				{% endif %}
+			</div>
+		</div>
+
+		{% if post.comments|length >0 %}
+			<div class="comments">
+				<div class="row">
+					{% for comment in post.comments %}
+						<div class="col-12 col-sm-12 col-md-12 col-lg-12 comment">
+							<div class="row">
+								<div class="col-md-2">
+									<p>{{ comment.users.username }}</p>
+									<p>
+										{% if 'ROLE_ADMIN' in comment.users.getroles()  %}
+											<img src="{{ asset('images/profile/admin.png') }}" width="50px" alt="user"/>
+										{% else %}
+											<img src="{{ asset(urlProfil ~ comment.users.photo) }}" alt="user" width="50px"/>
+										{% endif %}
+
+
+									</p>
+								</div>
+								<div class="col-md-10">
+									<p class="time" style="margin-bottom: 15px">
+										<small>{{ comment.createdAt | date|ago(locale='fr') }}</small>
+									</p>
+									{% if comment.image !=null %}
+										<p>
+											<img src="{{ asset(urlposts ~ comment.image) }}" class="img-fluid comment-image" alt=""/>
+										</p>
+									{% endif %}
+									{% if comment.content !=null %}
+										<p class="commentaire after">
+											{{ comment.content }}
+										</p>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+		{% if post.closed == false %}
+			<div class="row">
+				<form id="posts-form" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="textarea-container">
+							<textarea id="myTextarea" class="form-control" placeholder="contenu de la publication" name="foo"></textarea>
+							<small id="contenuHelp" class="form-text text-danger">Le contenu de la publication doit être d'aumoins 5
+																																																																																																																																																																																																																																																																            caractères</small>
+
+							<small id="contenuImageHelp" class="form-text text-danger">Fournissez un contenu ou alors choisissez une image</small>
+
+							<label for="picture__input">
+								<p class="gallery">
+									<img src="{{ asset('icons/gallery.svg') }}" alt="gallery"/>
+								</p>
+							</label>
+
+						</div>
+
+						<span class="picture__image"></span>
+						<small id="autorize-files" class="form-text text-danger">Seuls les fichiers jpg,jpeg et png sont autorisés</small>
+
+						<button type="button" class="btn-close delete-image-publication-icon" aria-label="Close"></button>
+
+						<input type="file" accept=".jpg,.png,.jpg,.PNG" name="picture__input" id="picture__input"/>
+					</div>
+					<small class="pub-error form-text text-danger">Une erreur est survenue, vérifiez votre connexion et réessayez</small>
+					{% if app.user and app.user.isIsVerified == true %}
+						<div class="modal-footer border-top-0 d-flex justify-content-center">
+							<button type="submit" class="post-pub" id="submitPublication">
+								Envoyer
+							</button>
+							<button type="submit" class="patienter">Patientez svp ...</button>
+						</div>
+					{% else %}
+
+						<p class="text-center text-danger">Vous ne pouvez pas publier sans avoir activé votre compte ou sans vous être connecté</p>
+					{% endif %}
+
+				</form>
+			</div>
+		{% endif %}
+	</div>
+
+	{% include "posts/delete_post_confirmation.html.twig" %}
+{% endblock %}
+{% block
+javascripts %}
+	{{ encore_entry_script_tags("posts-detail") }}
+	{{ encore_entry_script_tags("home") }}
+	{{ encore_entry_script_tags("add-image-post") }}
+	{{ encore_entry_script_tags("publication") }}
+	{{ encore_entry_script_tags("control-emoji") }}
+	{{ encore_entry_script_tags("emoji") }}
+
+{% endblock %}

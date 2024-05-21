@@ -1,0 +1,55 @@
+{% macro pagination_post(paginator,url) %}
+	{% if paginator.hasToPaginate %}
+		<div class="navigation text-center">
+			<ul class="pagination">
+				{% if paginator.hasPreviousPage %}
+					<li class="page-item">
+						<a class="page-link" href="{{ path(url, {page: paginator.previousPage }) }}" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">precedent</span>
+						</a>
+					</li>
+
+				{% else %}
+
+					<li class="page-item disabled">
+						<a class="page-link" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">precedent</span>
+						</a>
+					</li>
+
+				{% endif %}
+				{% for i in 1..paginator.lastPage %}
+					{% if i ==
+    paginator.currentPage %}
+						<li class="page-item active">
+							<a class="page-link">{{ i }}</a>
+						</li>
+					{% else %}
+						<li class="page-item">
+							<a class="page-link" href="{{ path(url, {page: i }) }}">{{ i }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+				{% if paginator.hasNextPage %}
+					<li class="page-item">
+						<a class="page-link" href="{{ path(url, {page: paginator.nextPage }) }}" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+							<span class="sr-only">suivant</span>
+						</a>
+					</li>
+
+				{% else %}
+					<li class="page-item disabled">
+						<a class="page-link" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+							<span class="sr-only">suivant</span>
+						</a>
+					</li>
+
+				{% endif %}
+			</ul>
+		</div>
+	{% endif %}
+{% endmacro %}
