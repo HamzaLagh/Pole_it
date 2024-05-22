@@ -457,7 +457,7 @@ h1 {
 
   }
   .card .content .title{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 600;
   }
   .card .content .sub-title{
@@ -466,6 +466,10 @@ h1 {
     color: #e74c3c;
     line-height: 20px;
   }
+
+
+
+
   .card .content p{
     text-align: justify;
     margin: 10px 0;
@@ -476,7 +480,7 @@ h1 {
     margin: 10px 0;
   }
   .card .content .btn button{
-    background: #e74c3c;
+    background: $primary-color;
     color: #fff;
     border: none;
     outline: none;
@@ -522,6 +526,8 @@ h1 {
 
    
     .navbar .links li .sub-menu{word-wrap: break-word;}
+
+    .phone-screen{width: 100%;}
 }
 
 

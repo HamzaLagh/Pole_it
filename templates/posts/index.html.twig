@@ -20,7 +20,8 @@
 
 		<div id="astro-text">
 			<h1>Orleans astro-pôle</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae quam et tortor consequat porta. Sed faucibus, ligula quis mollis lobortis, diam felis tempus enim, a vestibulum eros quam ac magna. Vestibulum varius porttitor elit, et vulputate odio egestas sit amet.</p>
+			<p>Bienvenue chez PoleIt - Centre d'Astronomie d'Orléans
+																												  la meilleur destination pour explorer les mystères de l'univers ! Situé au cœur d'Orléans, notre centre d'astronomie est dédié à l'exploration cosmique et à la découverte des merveilles du ciel.</p>
 		</div>
 	</div>
 	<div class="marquee">
@@ -36,18 +37,21 @@
 				<div class="col-lg-6 col-md-6 col-12 planetarium">
 					<h2>Notre planetarium</h2>
 					<p><img src="{{ asset('images/astro/planetarium.jpg') }}" class="img-fluid " alt="planetarium"></p>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium corporis porro libero quasi, voluptatibus nulla placeat hic similique aliquid temporibus autem facilis itaque illum aspernatur qui repudiandae cupiditate iure.</p>
+					<br>
+					<p>Notre planetarium en forme de dôme projette une simulation réaliste,nous disposons de projecteurs à effets spéciaux qui peuvent créer des simulations d'aurores boréales, de météores et d'autres événements astronomiques.c'est un  moyen amusant et éducatif d'apprendre l'astronomie car nous proposons une.
+					</p>
 				</div>
 				<div class="col-lg-6 col-md-6 col-12 observatoire">
-					<h2>Notre planetarium</h2>
+					<h2>Notre Observatoire</h2>
 					<p><img src="{{ asset('images/astro/observatoire.jpg') }}" class="img-fluid " alt="observatoire"></p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quo aut voluptate. Doloribus quia delectus debitis animi quidem autem! Molestias doloribus ut voluptates, delectus facilis tempora quidem exercitationem natus illum.</p>
+					<br>
+					<p>Nos passionnés d'astronomie observe les evenements terrestre et celestre a travers cet observatoire ,qui est équipés de télescopes , un dome ,Caméras et Détecteurs . il est utilisés pour recueillir des données sur les objets célestes tels que les étoiles, les planètes, les comètes et les galaxies.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- ======= Counts Section ======= -->
-	<div class="container" style="margin-top:20px;margin-bottom:30px">
+	<div class="container" style="margin-top:30px;margin-bottom:30px">
 
 		<div class="row" data-aos="fade-up" data-aos-duration="3000">
 			<div class="col-lg-6 col-md-6 col-12 ">
@@ -147,17 +151,17 @@
 
 	<div class="container carousel">
 		<h2>Nos derniers articles</h2>
-		<div class="slider owl-carousel row">
+		<div class="slider owl-carousel row ">
 
 			{% for item in articles %}
-				<div class="card">
+				<div class="card  ">
 					<div class="img"><img src="{{ asset(url ~ item.image) }}" alt=""></div>
 					<div class="content">
 						<div class="title">{{item.title}}</div>
-						<div class="sub-title">Graphic Designer</div>
+						{# <div class="sub-title">Graphic Designer</div> #}
 						<p class="article-content">{{item.content}}</p>
 						<div class="btn">
-							<button>Read more</button>
+							<button>Lire la suite...</button>
 						</div>
 					</div>
 				</div>
