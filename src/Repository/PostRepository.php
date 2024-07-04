@@ -44,7 +44,6 @@ class PostRepository extends ServiceEntityRepository
     public function findLatest(int $page = 1): Paginator
     {
         $qb = $this->createQueryBuilder('p')
-            ->where('p.visible = true')
             ->orderBy('p.id', 'DESC');
         return (new Paginator($qb))->paginate($page);
     }
@@ -65,7 +64,6 @@ class PostRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('p')
             ->where('p.title LIKE :titre')
-            ->andWhere('p.visible = true')
             ->setParameter('titre', '%' . $titre . '%')
             ->addOrderBy('p.createdAt', 'desc');
 

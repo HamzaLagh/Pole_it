@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: database
+  name: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: database
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/symfony-6-docker-main-default: "true"
+        io.kompose.service: database
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_DATABASE
+            - name: MYSQL_PASSWORD
+            - name: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_USER
+          image: database
+          name: database
+          ports:
+            - containerPort: 3306
+              hostPort: 3309
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /docker-entrypoint-initdb.d/init.sql
+              name: database-claim0
+            - mountPath: /var/lib/mysql
+              name: database-claim1
+      restartPolicy: Always
+      volumes:
+        - name: database-claim0
+          persistentVolumeClaim:
+            claimName: database-claim0
+        - name: database-claim1
+          persistentVolumeClaim:
+            claimName: database-claim1
+status: {}

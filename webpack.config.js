@@ -41,6 +41,8 @@ Encore
     .addEntry('product', './assets/product.js')
     .addEntry('confirmation-payment', './assets/confirmation-payment.js')
     .addEntry('nuit', './assets/nuit.js')
+    .addEntry('enfants', './assets/enfants.js')
+    .addEntry('shopping', './assets/shopping.js')
   
    
 

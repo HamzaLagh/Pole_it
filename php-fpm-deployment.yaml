@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: php-fpm
+  name: php-fpm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: php-fpm
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/symfony-6-docker-main-default: "true"
+        io.kompose.service: php-fpm
+    spec:
+      containers:
+        - env:
+            - name: APP_ENV
+            - name: APP_SECRET
+            - name: DATABASE_URL
+              value: mysql://:@database:3306/?serverVersion=5.7
+          image: php-fpm
+          name: php-fpm
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/www
+              name: php-fpm-claim0
+      restartPolicy: Always
+      volumes:
+        - name: php-fpm-claim0
+          persistentVolumeClaim:
+            claimName: php-fpm-claim0
+status: {}

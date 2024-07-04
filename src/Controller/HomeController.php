@@ -27,6 +27,7 @@ class HomeController extends AbstractController
 
         $urlPublication = $api->apiUrl() . "uploads/posts/";
 
+
         return $this->render("posts/index.html.twig", ["articles" => $articles, "url" => $urlPublication]);
     }
 

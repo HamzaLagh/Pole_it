@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}Procédure de visa études
+{% block title %}PoleIt Orléans
 {% endblock %}
 {% block content
 %}{% endblock %}
 {% block stylesheets %}
+	{{ parent() }}
 
 	{{ encore_entry_link_tags("home") }}
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 {% endblock %}
 {% block body %}
+	{{ parent() }}
 	<div class="banniere">
 		<img src="{{ asset('images/banniere.jpg') }}" class="img-fluid" alt="user"/>
 
@@ -21,7 +23,7 @@
 		<div id="astro-text">
 			<h1>Orleans astro-pôle</h1>
 			<p>Bienvenue chez PoleIt - Centre d'Astronomie d'Orléans
-																												  la meilleur destination pour explorer les mystères de l'univers ! Situé au cœur d'Orléans, notre centre d'astronomie est dédié à l'exploration cosmique et à la découverte des merveilles du ciel.</p>
+																																																																																												  la meilleur destination pour explorer les mystères de l'univers ! Situé au cœur d'Orléans, notre centre d'astronomie est dédié à l'exploration cosmique et à la découverte des merveilles du ciel.</p>
 		</div>
 	</div>
 	<div class="marquee">
@@ -62,7 +64,7 @@
 
 			<div class="col-lg-6 col-md-6 col-12 ">
 				<div class="embed-responsive ">
-					<iframe width="600" height="500" src="https://www.youtube.com/embed/nxDlkegwabM?si=4vyMoPFHNOq-fqsb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					<iframe width="600" height="500" src="https://www.youtube.com/embed/c76T7uBdJoU?si=Du651kCtzt9kOWpx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				</div>
 
 			</div>
@@ -76,24 +78,24 @@
 		<div class="row" data-aos="fade-right" data-aos-duration="2000">
 			<div class="col-lg-3 col-md-3 col-6 ">
 				<p><img src="{{ asset('images/astro/globe.png') }}" class="img-fluid spec" alt="arriere-plan-lunaire-futuriste"></p>
-				<h3>Édition</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<h3>Globe terrestre</h3>
+				<p>Un globe terrestre est une sphère sur laquelle est dessinée la surface de la Terre.</p>
 			</div>
 
 			<div class="col-lg-3 col-md-3 col-6 ">
 				<p><img src="{{ asset('images/astro/mesure.png') }}" class="img-fluid spec" alt="arriere-plan-lunaire-futuriste"></p>
 				<h3>Carrière</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<p>Venez étudier l’origine et l'évolution de l'univers à travers nos cours pratiques.</p>
 			</div>
 			<div class="col-lg-3 col-md-3 col-6 ">
 				<p><img src="{{ asset('images/astro/atom.png') }}" class="img-fluid spec" alt="arriere-plan-lunaire-futuriste"></p>
-				<h3>Education</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<h3>L'atome: tout est molécule.</h3>
+				<p>la plus petite partie d'un corps simple pouvant se combiner chimiquement avec un autre.</p>
 			</div>
 			<div class="col-lg-3 col-md-3 col-6 ">
 				<p><img src="{{ asset('images/astro/mars.png') }}" class="img-fluid spec" alt="arriere-plan-lunaire-futuriste"></p>
-				<h3>Meeting</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<h3>Decouverte de la lune</h3>
+				<p>Neil Armstrong fût le premier homme à avoir posé le pied sur la Lune le 21 juillet 1969 à 2 h 56 UTC.</p>
 			</div>
 		</div>
 		<div class="centre-spatial">
@@ -105,10 +107,11 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-12 ">
 					<div class="centre-spatial-text ">
-						<h4>What Is Astronomy?</h4>
-						<p class="centre-spatial-text-first">What we do</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quas et quo, recusandae asperiores vitae, repellat alias rem ad nulla voluptatum eius in nobis quasi harum voluptates! Et, perferendis nobis.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptas consectetur iste tempore nesciunt alias architecto porro iusto accusamus eveniet quod tempora officiis delectus in repellat, voluptate minus harum? Veritatis?</p>
+						<h4>C'est quoi l'astronomie?</h4>
+						<p class="centre-spatial-text-first">Notre mission</p>
+						<p>Notre mission est de rendre l'astronomie accessible à tous et de stimuler la curiosité pour les sciences de l'espace. Avec notre équipement d'expert, y compris notre radiotélescope géant, nous offrons une expérience unique et éducative pour les visiteurs de tous âges.</p>
+						<p>Une équipe de passionnés et d'experts est dédiée à partager les merveilles de l'univers avec le grand public.
+						</p>
 						<button class="astro-button">En savoir plus</button>
 
 					</div>
@@ -122,27 +125,27 @@
 
 	<section class="container" id="solar-system">
 		<header>
-			<p>Astronomy Discovery</p>
-			<h1>Solar System Rocky Planets</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-				<br>nec ullamcorper mattis, pulvinar dapibus leo.</p>
+			<p>Découverte de l'astronomie</p>
+			<h1>Planètes rocheuses du système solaire</h1>
+			<p>des planètes qui ont une surface solide, comme celle de la Terre. Elles sont composées essentiellement de roche,
+				<br>bien qu'aussi de métal. Elle sont possiblement habitables.</p>
 		</header>
 		<div class="row solar-system" data-aos="fade-left" data-aos-duration="2000">
 			<div class="col-lg-3 col-md-3 col-12 ">
 				<p><img src="{{ asset('images/astro/mercury-1.png') }}" class="img-fluid planete" alt="mercury-1"></p>
-				<h2>Mercury</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<h2>Mercure</h2>
+				<p>Mercure est la planète la plus proche du Soleil et la plus petite planète de notre système solaire – à peine plus grande que la Lune de la Terre.</p>
 			</div>
 
 			<div class="col-lg-6 col-md-6 col-12 ">
 				<p><img src="{{ asset('images/astro/venus-2.png') }}" class="img-fluid venus" alt="venus-2"></p>
 				<h2>Venus</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<p>deuxième planète après le Soleil et la sixième plus grande planète. C'est la planète la plus chaude de notre système solaire.</p>
 			</div>
 			<div class="col-lg-3 col-md-3 col-12 ">
 				<p><img src="{{ asset('images/astro/mars-red-planet-in-space.png') }}" class="img-fluid planete" alt="mars-red-planet-in-space"></p>
 				<h2>Mars</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+				<p>quatrième planète du Système solaire par ordre croissant de la distance au Soleil et la deuxième par ordre croissant de la taille et de la masse.</p>
 			</div>
 
 		</div>
@@ -161,7 +164,9 @@
 						{# <div class="sub-title">Graphic Designer</div> #}
 						<p class="article-content">{{item.content}}</p>
 						<div class="btn">
-							<button>Lire la suite...</button>
+							<button>
+								<a href="{{path('app_post_get_detail',{id:item.id})}}">Lire la suite ...</a>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -172,6 +177,7 @@
 	</div>
 
 </div>{% endblock %}{% block javascripts %}
+{{ parent() }}
 {{ encore_entry_script_tags("home") }}
 {{ encore_entry_script_tags("product") }}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

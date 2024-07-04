@@ -75,12 +75,7 @@
     content: '$';
   }
   
-  /* Body/Header stuff */
-  body {
-    padding: 0px 30px 30px 20px;
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 100;
-  }
+  
   
   h1 {
     font-weight: 100;
@@ -136,18 +131,19 @@
     width: 40px;
   }
   
-  .product .remove-product {
-    border: 0;
-    padding: 4px 8px;
-    background-color: #c66;
-    color: #fff;
-    font-family: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
-    font-size: 12px;
-    border-radius: 3px;
-  }
+  // .product .remove-product {
+  //   border: 0;
+  //   padding: 4px 8px;
+  //   background-color: #c66;
+  //   width: inherit;
+  //   color: #fff;
+  //   font-family: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
+  //   font-size: 12px;
+  //   border-radius: 3px;
+  // }
   
   .product .remove-product:hover {
-    background-color: #a44;
+    cursor: pointer;
   }
   
   /* Totals section */
@@ -299,5 +295,12 @@
     .totals .totals-item .totals-value {
       width: 40%;
     }
+  }
+
+  #footer{
+   
+ width: 100%;
+    margin-top: 90px;
+  bottom: 0px;
   }
   

@@ -38,10 +38,12 @@ class Articles
     private ?bool $inStock = null;
 
 
+
+
     public function __construct()
     {
-
         $this->inStock = true;
+        $this->createdAt = new \DateTimeImmutable();
     }
 
 

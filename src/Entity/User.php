@@ -51,10 +51,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Groups('comment:read')]
     private ?bool $isCompteclosed = null;
 
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Comment::class)]
-    #[Groups('comment:read')]
-    private Collection $comments;
-
     #[ORM\Column(length: 180)]
     #[Groups('comment:read')]
     private ?string $email = null;
@@ -68,8 +64,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: PostLike::class)]
-    private Collection $postLikes;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $photo = null;
@@ -79,7 +73,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->activated = false;
         $this->isVerified = false;
         $this->isCompteclosed = false;
-        $this->postLikes = new ArrayCollection();
         $this->banner = "Ma banniere";
     }
 
@@ -199,37 +192,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-
-    /**
-     * @return Collection<int, Comment>
-     */
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
-
-    public function addComment(Comment $comment): static
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
-            $comment->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeComment(Comment $comment): static
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getUsers() === $this) {
-                $comment->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * A visual identifier that represents this user.
      *
@@ -283,35 +245,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    /**
-     * @return Collection<int, PostLike>
-     */
-    public function getPostLikes(): Collection
-    {
-        return $this->postLikes;
-    }
 
-    public function addPostLike(PostLike $postLike): self
-    {
-        if (!$this->postLikes->contains($postLike)) {
-            $this->postLikes->add($postLike);
-            $postLike->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removePostLike(PostLike $postLike): self
-    {
-        if ($this->postLikes->removeElement($postLike)) {
-            // set the owning side to null (unless already changed)
-            if ($postLike->getUsers() === $this) {
-                $postLike->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getPhoto(): ?string
     {

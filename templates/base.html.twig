@@ -35,10 +35,16 @@
 
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		{# Run `composer require symfony/webpack-encore-bundle` to start using
-																								    Symfony UX #}
+																														    Symfony UX #}
 		{% block stylesheets %}
 			{{
       encore_entry_link_tags("app")
+
+    }}
+
+			{{
+      encore_entry_link_tags("shopping")
+
     }}
 
 		{% endblock %}
@@ -46,6 +52,10 @@
 
 			{{
       encore_entry_script_tags("app")
+    }}
+
+			{{
+      encore_entry_script_tags("shopping")
     }}
 
 			{{
@@ -73,6 +83,7 @@
 
 			{% block body %}
 				{% include "partials/_flash.html.twig" %}
+				{% include "partials/_cart_open.html.twig" %}
 			{%
       endblock body %}
 		</div>

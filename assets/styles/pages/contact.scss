@@ -3,10 +3,10 @@
 @import "../commons/global";
 
 
-
+body,html{background-color: $primary-color;}
 
 h1 {
-  color: $primary-color;
+  color: #fff;
   margin-top: 20px;
   margin-top: 20px;
 }
@@ -30,7 +30,7 @@ h2 {
 
 
 body {
-  background: #f0f2f5;
+  
 
   font-family: "Poppins", sans-serif;
 }

@@ -196,19 +196,6 @@ span.js-label {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .banniere {
     margin-top: -40px;
 }
@@ -468,7 +455,9 @@ h1 {
   }
 
 
-
+.card img{
+    
+}
 
   .card .content p{
     text-align: justify;
@@ -489,6 +478,9 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
+  }
+  .card .content .btn button a{
+    color: #fff;
   }
   .card .content .btn button:hover{
     transform: scale(0.9);
@@ -550,7 +542,7 @@ h1 {
 }
 
 #astro-text h1{color: #000; margin-bottom: 20px; text-transform: uppercase;}
-#astro-text p{font-weight: 500;}
+#astro-text p{font-weight: 500; font-size: 18px;}
 
 .marquee{
     height: 50px;
@@ -642,4 +634,20 @@ h1 {
     margin-bottom: 20px;
     
   }
+
+  .observatoire img,.planetarium img{border: 10px solid #fff;}
+
+.forum-list-h1{color: #fff ;}
+.forum-list img{height: 250px;}
+.cart-wrapper a{color: $primary-color;}
+
+
+
+
+
+
+
+
+
+
 

@@ -1,10 +1,13 @@
-import axios from "axios";
 import './styles/pages/payment.scss';
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
-    
+    let cart = [];
+
+    var products = $('#js-data').data('produits');
+
+  var url = $('#js-data').data('url');
+  
+      
     const checkoutProducts = document.getElementById("checkout-products");
     const checkoutTotal = document.getElementById("checkout-total");
   
@@ -25,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 productElement.innerHTML = `
   
                 <li>
-                  <img src='${product.image}'>
+                  <img src='${url}/${product.image}'>
                   <h4 class="truncate">${product.title}</h4>
                   <h5>${product.price.format()}</h5>
                   <h5>${item.qty} pcs</h5>
@@ -44,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const tax = subtotal * taxRate;
         const grandTotal = subtotal + tax + shipping;
   
-        // Display the total amount
         checkoutTotal.innerHTML = `
               <h5>Shipping</h5><h4>${shipping.format()}</h4>
               <h5 class='total'>Total</h5><h1>${grandTotal.format()}</h1>
@@ -52,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 `;
                 
   
-        // Add event listeners for remove buttons
         const removeButtons = document.querySelectorAll(".remove-product");
         removeButtons.forEach(button => {
             button.addEventListener("click", function() {
@@ -61,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
   
-        // Add event listeners for quantity inputs
         const quantityInputs = document.querySelectorAll(".quantity-input");
         quantityInputs.forEach(input => {
             input.addEventListener("change", function() {
@@ -90,38 +90,122 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   
     function saveCart() {
-        localStorage.setItem("online-store", JSON.stringify(cart));
+        localStorage.setItem("store-astro", JSON.stringify(cart));
     }
   
     function loadCart() {
-        cart = JSON.parse(localStorage.getItem("online-store")) || [];
+        cart = JSON.parse(localStorage.getItem("store-astro")) || [];
     }
   
     loadCart();
     renderCheckoutProducts();
   });
   
-  // Helper function to format numbers as currency
-  Number.prototype.format = function() {
-    return this.toLocaleString("en-US", {
+  Number.prototype.format = function () {
+      return this.toLocaleString("fr-FR", {
         style: "currency",
-        currency: "USD",
-    });
-  };
-  
-  // Helper function to format numbers without currency
-  Number.prototype.formatWithoutCurrency = function() {
-    return this.toLocaleString("en-US", {
+        currency: "EUR",
+      });
+    };
+    
+   
+    Number.prototype.formatWithoutCurrency = function () {
+      return this.toLocaleString("fr-FR", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
-    });
-  };
+      });
+    };
+    
   
+  // -------ecrirez
+    function updateCardNumber() {
+      const inputField = document.getElementById("inputCardNumber").value;
+      let defaultText = "0000 0000 0000 0000";
+      let updatedText = defaultText.split('');
   
+      for (let i = 0; i < inputField.length; i++) {
+          
+          if (defaultText[i] === ' ') {
+              updatedText[i] = ' ';
+          } else {
+              updatedText[i] = inputField[i] || '0';
+          }
+      }
   
+      document.getElementById("label-cardnumber").innerText = updatedText.join('');
+  }
   
+  function updateExpiration() {
+      const inputField = document.getElementById("inputExpiration").value;
+      let defaultText = "00/0000";
+      let updatedText = defaultText.split('');
   
+      for (let i = 0; i < inputField.length; i++) {
+         
+          if (defaultText[i] === ' ' || defaultText[i] === '/') {
+              updatedText[i] = defaultText[i];
+          } else {
+              updatedText[i] = inputField[i] || '0';
+          }
+      }
   
+      document.getElementById("label-cardexpiration").innerText = updatedText.join('');
+  }
   
+  function updateCVC() {
+      const inputField = document.getElementById("inputCVC").value;
+      let defaultText = "000";
+      let updatedText = defaultText.split('');
   
+      for (let i = 0; i < inputField.length; i++) {
+          updatedText[i] = inputField[i] || '0';
+      }
   
+      document.getElementById("label-cvc").innerText = updatedText.join('');
+  }
+  
+
+
+
+
+
+function validateInput() {
+    var cardNumber = document.getElementById("inputCardNumber").value;
+    var expiration = document.getElementById("inputExpiration").value;
+    var cvc = document.getElementById("inputCVC").value;
+
+    
+    if (!isValidCardNumber(cardNumber)) {
+        alert("Please enter a valid card number.");
+        return false;
+    }
+
+  
+    if (!isValidExpiration(expiration)) {
+        alert("Please enter a valid expiration date in MM / YYYY format.");
+        return false;
+    }
+
+ 
+    if (!isValidCVC(cvc)) {
+        alert("Please enter a valid CVC code.");
+        return false;
+    }
+
+    return true;
+}
+
+function isValidCardNumber(cardNumber) {
+    
+    return cardNumber.length === 19;
+}
+
+function isValidExpiration(expiration) {
+ 
+    return /^\d{2}\/\d{4}$/.test(expiration);
+}
+
+function isValidCVC(cvc) {
+ 
+    return /^\d{3}$/.test(cvc);
+}

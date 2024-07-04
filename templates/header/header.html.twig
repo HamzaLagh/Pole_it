@@ -20,27 +20,19 @@
 
 
 				<li>
-					<a href="#" class="{% if app.session.get('menu') == 'demarches' %} active{% endif %}">Expositions</a>
+					<a href="#" class="{% if app.session.get('menu') == 'demarches' %} active{% endif %}">Activités</a>
 					<i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
 					<ul class="htmlCss-sub-menu sub-menu">
+
 						<li>
-							<a class="nav-link scrollto " href="">Expositions en journée</a>
+							<a class="nav-link scrollto " href="{{ path('app_nuits_activites') }}">Activités journalières et nocturnes</a>
 						</li>
 						<li>
-							<a class="nav-link scrollto " href="{{ path('app_nuits_activites') }}">expositions nocturnes</a>
-						</li>
-						<li>
-							<a class="nav-link scrollto " href="{{ path('app_enfants') }}">Activités quotidiennes pour petits et grands</a>
+							<a class="nav-link scrollto " href="{{ path('app_enfants') }}">Activités quotidiennes pour petits</a>
 						</li>
 
 					</ul>
 				</li>
-
-				{% if app.user %}
-					<li>
-						<a class="nav-link scrollto " href="{{ path('app_post_forum') }}">Forum</a>
-					</li>
-				{% endif %}
 
 				<li class="menu">
 					<a class="nav-link scrollto {% if app.session.get('menu') == 'boutique' %} active{% endif %}" href="{{ path('app_shop') }}">Boutique</a>
@@ -80,8 +72,9 @@
 						<i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
 						<ul class="htmlCss-sub-menu sub-menu">
 							<li data-turbo="true">
-								<a class="nav-link scrollto " href="">Mes interventions</a>
+								<a class="nav-link scrollto " href="{{ path('publication_list') }}">Liste des articles</a>
 							</li>
+
 							<li data-turbo="true">
 								<a class="nav-link scrollto " href="{{ path('app_logout') }}">Se déconnecter</a>
 							</li>
@@ -91,7 +84,7 @@
 
 				{% endif %}
 
-				<li>
+				<li class="cart-btn">
 					<a class="nav-link scrollto ">
 						<i class="bi bi-cart" id="cart-icon"></i>
 

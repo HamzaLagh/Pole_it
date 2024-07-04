@@ -1,15 +1,16 @@
-// @import "../commons/variables";
+@import "../commons/variables";
 // @import "../commons/mixins";
 //@import "../commons/global";
 
 body,
 html {
-    background: #fff !important;
+    background: $primary-color;
     overflow-x: hidden;
 }
 
 .titre {
     margin-bottom: 30px;
+    color: #fff !important;
 }
 
 
@@ -32,7 +33,7 @@ p {
     text-decoration: underline;
 }
 
-.post-image{max-height: 200px;}
+.post-image{max-height: 400px;}
 
 .comment {
     background-color: #ececec;
@@ -44,33 +45,26 @@ p {
 
 }
 
-.resolu {
-    background-color: #e5f0cb;
-    height: 40px;
-    line-height: 40px;
-    color: #3b8416;
-    box-shadow: 0 1px 1px #e5e5e5;
-    background-clip: padding-box;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    padding-left: 20px;
-    margin-bottom: 30px;
+.card img{
+    height: 200px;
+    
 }
 
-.actions-buttons {
-    margin-top: 26px;
-    text-decoration: underline;
-    display: flex;
-    justify-content: space-evenly;
-
+.cart-wrapper{
+    margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-.edit-button {
-    margin-left: 42px;
-    cursor: pointer;
+.article-content{
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 
-}
+  }
+
 
 .delete-button,
 .edit-button,
@@ -102,4 +96,9 @@ li a {
 
 .comment-image {
     max-width: 590px;
+}
+
+#titre {
+    margin-bottom: 30px;
+    color: #fff !important;
 }
